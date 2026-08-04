@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber-Gen V15.2 - Ing. Juan Jose</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Prism.js -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+<button class="cyber-btn-icon" id="toggle-sidebar"><i class="fas fa-bars"></i></button>
+
+<div class="cyber-container">
+  <aside class="cyber-sidebar collapsed" id="sidebar">
+    <div class="sidebar-header">
+      <h4><i class="fas fa-microchip"></i> CYBER-GRID</h4>
+      <button class="btn-close-sidebar" id="close-sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" id="new-chat-btn"><i class="fas fa-plus"></i> Nueva Conversacion</button>
+      <div class="nav-divider"></div>
+      <h6 class="nav-label">HISTORIAL NEURAL</h6>
+      <div id="chat-history-list"></div>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="nav-item" id="toggle-audio-global"><i class="fas fa-volume-up"></i> Voz: ON</button>
+    </div>
+  </aside>
+
+  <main class="cyber-main">
+    <header class="cyber-header">
+      <div class="header-left">
+        <h2>CYBER-GEN <span class="v-tag">V15.2</span></h2>
+        <div class="model-status">
+          <span class="status-dot" id="status-dot" title="Verificando conexion..."></span>
+          <select id="model-select" title="Cambiar modelo"></select>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="cyber-btn-icon" id="clear-btn" title="Limpiar Terminal"><i class="fas fa-trash-alt"></i></button>
+      </div>
+    </header>
+
+    <div class="chat-viewport" id="chat-box">
+      <div class="welcome-screen" id="welcome-screen">
+        <div class="cyber-logo-anim"><i class="fas fa-brain"></i></div>
+        <h1>Bienvenido al Futuro</h1>
+        <p>Conexion neuronal establecida con el Ing. Juan Jose</p>
+      </div>
+    </div>
+
+    <div id="file-preview-bar" class="file-preview-bar d-none"></div>
+
+    <footer class="cyber-footer">
+      <form class="input-wrapper" id="chat-form">
+        <div class="action-buttons">
+          <button type="button" class="action-btn cyber-btn-icon" id="stt-btn" title="Dictado por Voz"><i class="fas fa-microphone"></i></button>
+          <label class="action-btn cyber-btn-icon" title="Subir Archivo Excel/PDF">
+            <i class="fas fa-paperclip"></i>
+            <input type="file" id="file-upload" hidden accept=".xlsx,.xls,.csv,.pdf,.txt,.md" multiple>
+          </label>
+        </div>
+        <textarea id="prompt-input" placeholder="Escribe tu comando o pregunta..." rows="1"></textarea>
+        <button type="submit" class="send-btn" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </footer>
+  </main>
+</div>
+
+<!-- Librerias Externas -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- Configuracion (tu API key) -->
+<script src="src/config.js"></script>
+<!-- Funciones extra: hora mundial, clima animado, generacion de imagenes -->
+<script src="src/features.js"></script>
+<!-- Logica principal -->
+<script src="src/main.js"></script>
+
+</body>
+</html>
